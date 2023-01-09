@@ -2,6 +2,8 @@ package service;
 
 import java.util.ArrayList;
 
+import model.movimiento;
+
 public class CuentaMovimientos {
 	/*tercera parte:
 	Se creará una nueva clase que registre los movimientos realizados en la cuenta (ingreso y extracción).

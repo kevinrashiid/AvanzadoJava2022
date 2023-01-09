@@ -1,6 +1,6 @@
 package model;
 
-public class moviento {
+public class movimiento {
 	/*tercera parte:
 	Se creará una nueva clase que registre los movimientos realizados en la cuenta (ingreso y extracción).
 	Cada movimiento se caracteriza por una cantidad y un tipo (ingreso o extracción).
@@ -8,7 +8,7 @@ public class moviento {
 	
 	private double cantidad;
 	private String tipo;
-	public moviento(double cantidad, String tipo) {
+	public movimiento(double cantidad, String tipo) {
 		super();
 		this.cantidad = cantidad;
 		this.tipo = tipo;
