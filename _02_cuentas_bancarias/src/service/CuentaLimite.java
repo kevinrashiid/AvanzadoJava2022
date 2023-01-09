@@ -1,7 +1,7 @@
 package service;
 
 public class CuentaLimite extends Cuenta {
-	/*segunda partes:
+	/*SEGUNDA partes:
 		Crear una subclase de Cuenta que incluya un nuevo atributo limite, 
 		que servirá para definir el límite máximo de dinero que se podrá extraer.  
 		También incluirá un nuevo método, llamado ajustarLimite(), 
