@@ -10,7 +10,7 @@ public class Triangulo extends Figura{
 	}
 
 	@Override
-	public double superficie() {
+	public double superficie() {//sobrescribiendo el metodo superficie 
 		return base*altura/2;
 	}
 }
