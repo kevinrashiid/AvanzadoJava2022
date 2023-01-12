@@ -24,7 +24,7 @@ public class ColeccionDeNumeros {
 	public static int repetidos(Collection<Integer> col1, Collection<Integer> col2) {
 		int rep=0;
 		for(Integer n:col1) {//Recorremos col1 con n
-			if(col2.contains(n)) {
+			if(col2.contains(n)) {//preguntamos si en col2 hay que tiene n 
 				rep++;
 			}
 		}
