@@ -15,7 +15,5 @@ public class Test3Ejercicio {
 		
 		//Interface List
 		List<Integer> lista2=List.of(7,15,9);
-		
-		
 	}
 }
