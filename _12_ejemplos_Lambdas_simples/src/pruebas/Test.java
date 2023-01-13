@@ -23,7 +23,7 @@ public class Test {
 		//mostramos cad
 		I1 i1=cad->System.out.println(cad);
 		i1.print("prueba lambda");//llamamos al metodo para hacer lo de la lambdas
-		//decido que se sumen los dos parametros 
+		//decido que se sumen los dos parametros, dentro de parentesis por que son mas de dos parametros
 		I2 i2=(a,b)->a+b;
 		i2.m(3, 5);//llamamos al metodo para hacer lo de la lambdas
 		//devuelve un String cualquiera
