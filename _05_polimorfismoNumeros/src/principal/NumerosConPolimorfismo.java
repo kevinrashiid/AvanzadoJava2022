@@ -15,5 +15,4 @@ public class NumerosConPolimorfismo {
 	public static void mostrarValorNumerico(Number n) {//Number es la clase padre de los objetos numericos
 		System.out.println(n.intValue());//intValue devuelve el valor entero
 	}
-
 }

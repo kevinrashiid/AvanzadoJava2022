@@ -2,10 +2,12 @@ package geometria;
 
 
 //clase que representa de forma generica a una figura geometrica
+
 /*Crear dos subclases de figura: Triángulo y círculo.
 Atributos:
 -Triángulo: base y altura.
 -Círculo: radio.*/
+
 public abstract class Figura {
 	private String color;
 	public Figura(String color) {
@@ -18,6 +20,4 @@ public abstract class Figura {
 		this.color = color;
 	}
 	public abstract double superficie();
-	
-	
 }

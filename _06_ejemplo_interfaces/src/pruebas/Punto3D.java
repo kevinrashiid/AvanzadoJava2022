@@ -39,5 +39,4 @@ public class Punto3D extends Punto implements Operaciones{//hereda Punto //e imp
 		
 	}
 }
-
 //en todos constructor hay el metodo super();

@@ -18,5 +18,4 @@ public class TestConPolimorfismo {
 		System.out.println("Color:"+f.getColor());
 		System.out.println("Superficie:"+f.superficie());
 	}
-
 }

@@ -13,9 +13,9 @@ public class ColeccionDeNumeros {
 	}
 	public static int coleccionNum(Collection <Integer> col) {
 		int suma=0;
-		for(int c:col) {//recorremos todas las clases que estan en Collection con la variable c
-			suma+=c;	//sumamos todo lo que tiene Collection que es la raiz padre que dentro tiene
-						//ArrayList,HashSet,HashMap etc tec 
+		for(int c:col) {/*recorremos todas las clases que estan en Collection con la variable c
+			suma+=c;	sumamos todo lo que tiene Collection que es la raiz padre que dentro tiene
+						ArrayList,HashSet,HashMap etc tec*/
 		}
 		return suma; //devolvemos suma
 	}
@@ -30,5 +30,4 @@ public class ColeccionDeNumeros {
 		}
 		return rep;
 	}
-	
 }

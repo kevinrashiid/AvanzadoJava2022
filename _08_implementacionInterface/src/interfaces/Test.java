@@ -1,6 +1,7 @@
 package interfaces;
 /*
- Crear una implementacion de la interfaz Printer, que consista en que el metodo muestre por pantalla el texto recibido. 
+ Crear una implementacion de la interfaz Printer, 
+ que consista en que el metodo muestre por pantalla el texto recibido. 
  Se creara un objeto de dicha implementacion y se llamara al metodo con un texto cualquiera*/
 
 //SOLUCION 2
@@ -17,7 +18,8 @@ class Prueba implements Printer{//Crear una implementacion de la interfaz Printe
 }
 public class Test {
 
-	public static void main(String[] args) {//Se creara un objeto de dicha implementacion y se llamara al metodo con un texto cualquiera*/
+	public static void main(String[] args) {/*Se creara un objeto de dicha implementacion y
+											se llamara al metodo con un texto cualquiera*/
 		Prueba pr=new Prueba();
 		pr.print("hola");
 	}

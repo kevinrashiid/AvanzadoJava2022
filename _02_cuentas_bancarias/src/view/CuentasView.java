@@ -30,11 +30,10 @@ public class CuentasView {
 		System.out.println("Introduce limite");
 		limite=Double.parseDouble(sc.nextLine());
 		cuentamovimientos=new CuentaMovimientos(saldo,limite);
-		//ahora viene el rollo del mostrar el menu
 		
+		//ahora viene el rollo del mostrar el menu
 		Scanner sc2=new Scanner(System.in);
 		int opcion;
-
 			do {
 				mostrarMenu();
 				try {
@@ -65,7 +64,6 @@ public class CuentasView {
 		System.out.println("2.- Extraer dinero");
 		System.out.println("3.- Consultar Saldo y Movimientos");
 		System.out.println("4.- Salir");
-		
 	}
 	static void ingresarDinero() {
 		Scanner sc=new Scanner(System.in);
@@ -80,7 +78,6 @@ public class CuentasView {
 		System.out.println("Introduce cantidad");
 		cantidad=Double.parseDouble(sc.nextLine());
 		cuentamovimientos.extraer(cantidad);
-		
 	}
 	static void consultarSaldoYMovimientos() {
 		ArrayList<movimiento> movs=CuentaMovimientos.obtenerMovimiento();

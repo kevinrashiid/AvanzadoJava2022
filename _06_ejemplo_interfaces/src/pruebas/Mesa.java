@@ -23,6 +23,4 @@ public class Mesa implements Operaciones{ //implementamos/comprometemos de la in
 		alto*=-1;
 		return alto;
 	}
-	
-
 }

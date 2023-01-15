@@ -35,7 +35,7 @@ class TestListaNumeros {
 		lista.add(30);
 		assertEquals(50, lista.sum());//se esperaba 50
 	}
-
+	
 	@Test
 	void testAddInteger() {
 		lista.add(5);

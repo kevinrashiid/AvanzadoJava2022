@@ -16,8 +16,6 @@ public class TestSinPolimorfismo {
 		System.out.println("Superficie:"+circulo.superficie());
 		System.out.println("Tipo de figura: Triangulo");
 		System.out.println("Color:"+triangulo.getColor());
-		System.out.println("Superficie:"+triangulo.superficie());
-		
+		System.out.println("Superficie:"+triangulo.superficie());	
 	}
-
 }
