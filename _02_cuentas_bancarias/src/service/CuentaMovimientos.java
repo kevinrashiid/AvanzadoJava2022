@@ -10,14 +10,14 @@ Cada movimiento se caracteriza por una cantidad y un tipo (ingreso o extracción
 Incorporará un nuevo método que devuelva los movimientos registrados
 */
 public class CuentaMovimientos extends CuentaLimite{
-	private ArrayList<movimiento> movimientos=new ArrayList<>(); 	
+	static private ArrayList<movimiento> movimientos=new ArrayList<>(); 	
 	//constructor
 	public CuentaMovimientos(double saldo, double limite) {
 		super(saldo,limite); // llamada a constructor de cuentaLimite
 	}
 	//y lo que falte...(sobrescribir ingresar y extraer)
 	
-	public ArrayList<movimiento> obtenerMovimiento(){
+	static public ArrayList<movimiento> obtenerMovimiento(){
 		return movimientos;
 	}
 

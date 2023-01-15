@@ -86,8 +86,6 @@ public class CuentasView {
 		ArrayList<movimiento> movs=CuentaMovimientos.obtenerMovimiento();
 		for(movimiento m:movs) {
 			System.out.println(m.getTipo()+":"+m.getCantidad());
-		
 		}
-		System.out.println(m.getTipo()+":"+m.getCantidad());	
 	}
 }
