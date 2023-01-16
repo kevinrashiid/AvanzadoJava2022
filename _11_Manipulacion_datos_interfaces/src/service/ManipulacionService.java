@@ -47,10 +47,8 @@ public class ManipulacionService {
 	
 	/*Consumer para procesado de datos,
 	(imprimir por pantalla,guardar en un fichero, mandar a la nube)*/
-
 	/*mediante un unico metodo, aplicamos el procesado que nos manden a cada
 	elemento de la lista*/
-	
 	//metodo que recibe lista de numeros y los imprime
 	//metodo que recibe lista de numeros y los guarda en un fichero
 	//metodo que recibe lista de numeros y los manda a la nube
@@ -62,6 +60,7 @@ public class ManipulacionService {
 							    con el objeto recibido*/
 		}
 	}
+	
 	//metodo que recibe una lista de numeros e imprime los pares
 	//metodo que recibe un conjunto de numeros y guarda en un fichero los positivos
 	//metodo que recibe una lista y guarda en un fichero los multiplos de cinco
@@ -74,10 +73,10 @@ public class ManipulacionService {
 		for(int n:numeros) {
 			if(criterio.test(n)) {//.test metodo del Predicate
 				proceso.accept(n);//.accept metodo de Consumer
-
 			}			
 		}
 	}
+
 	//metodo que recibe una lista y devuelve la suma de los cuadrados de los numeros de la lista
 	//metodo que recibe una lista y devulve la suma de las raices cubicas de los numeros de la lista
 	//Function es un calculo 
