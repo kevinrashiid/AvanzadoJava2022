@@ -64,6 +64,7 @@ public class ManipulacionView {
 		System.out.println(service.sumaTransformados(nums, t->t*t));
 		
 		//suma de los cuadrados de las raices cubicas de cada elemento
+		//con el metodo andThen de function
 		
 	}
 }
