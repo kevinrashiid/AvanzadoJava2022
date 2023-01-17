@@ -17,8 +17,6 @@ public class TestReplace {
 		//programacion funcional (replaceAll)
 		nums.replaceAll(n->n*n);
 		
-		nums.forEach(n->System.out.println(n));
-		
+		nums.forEach(n->System.out.println(n));	
 	}
-
 }
