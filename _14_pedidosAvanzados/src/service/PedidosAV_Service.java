@@ -41,6 +41,7 @@ public class PedidosAV_Service {
 
 	}
 	public List<PedidosAV_Model> productosAlmacenados(){
+		
 
 	}
 }
