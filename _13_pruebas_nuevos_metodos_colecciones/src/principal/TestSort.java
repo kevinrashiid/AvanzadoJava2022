@@ -25,13 +25,11 @@ public class TestSort {
 		//ordenar de mayor de menor
 		//la resta al reves
 		System.out.println("----------------------\n2.-USANDO .sort de mayor a menor");
-
 		nums.sort((a,b)->b-a);
 		nums.forEach(n->System.out.println(n));
 		
 		//ordenar por numero de caracteres/cantidad de letras
 		System.out.println("----------------------\n3.-USANDO .sort con texto");
-
 		List<String> cadena=new ArrayList<String>(List.of("salida","armario","luna","armarillo"));
 		cadena.sort((a,b)->a.length()-b.length());
 		cadena.forEach(n->System.out.println(n));
