@@ -18,9 +18,10 @@ public class TestSort {
 		});*/
 		//el codigo desde la linea 12 a la 20 se reduce a las siguientes lineas 
 		//ordenar de menor a mayor
+		
 		System.out.println("1.-USANDO .sort de menor a mayor");
 		nums.sort((a,b)->a-b);
-		nums.forEach(n->System.out.println(n));
+		nums.forEach(n->System.out.println(n)); 
 		
 		//ordenar de mayor de menor
 		//la resta al reves
