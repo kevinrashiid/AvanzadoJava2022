@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
 /*Realizar un programa que permita mostrar el resultado 
  de sumar los pares una lista de números enteros*/
 public class ManipulacionService {
@@ -33,7 +35,6 @@ public class ManipulacionService {
 	criterio la condicion que debera cumplir el numero para ser sumado
 	se proporciona a traves de un objeto que implementala interfaz Predicate*/
 	//hacemos un metodo para todos
-	
 	//Predicate por que solo hay un parametro
 	public int sumaPorCriterio(List<Integer>numeros,Predicate<Integer> condicion) {
 		int suma=0;
@@ -65,7 +66,6 @@ public class ManipulacionService {
 	//metodo que recibe un conjunto de numeros y guarda en un fichero los positivos
 	//metodo que recibe una lista y guarda en un fichero los multiplos de cinco
 	//metodo que recibe un conjunto de numeros e imprime los negativos
-	
 	//Collection es el padre de los Array,List,HashSet etc
 	/*Se pone 3 atributos por que nos van a pasar lista, conjuntos, 
 	y Predicate para que se haga el metodo mientras que se cumplan la condicion*/
@@ -80,6 +80,7 @@ public class ManipulacionService {
 	//metodo que recibe una lista y devuelve la suma de los cuadrados de los numeros de la lista
 	//metodo que recibe una lista y devulve la suma de las raices cubicas de los numeros de la lista
 	//Function es un calculo 
+	//definimos lo que queremos que haga el metodo
 	public int sumaTransformados(Collection<Integer> numeros,Function<Integer,Integer> fun) {
 		int suma=0;
 		for(Integer n:numeros) {
@@ -88,5 +89,42 @@ public class ManipulacionService {
 		}
 		return suma;
 	}
-}	
 	
+	//esto es lo mismo que el anterior pero con UnaryOperator que se usa cuando su tipos de 
+	//datos que recibe son dos y son iguales
+	public int sumaTransformados2(Collection<Integer> numeros,UnaryOperator<Integer> fun) {
+		int suma=0;
+		for(Integer n:numeros) {
+			suma+=fun.apply(n);//sumamos el resultado de transformar cada numero segun la funcion
+							  //metodo abstracto apply, que a partir
+		}
+		return suma;
+	}
+	
+	/*Metodo que recibe una lista y devuelve la suma de todos los elementos de la lista,
+	a la que le añadimos un valor extraido de un fichero*/
+	/*Metodo que recibe una lista y devuelve la suma de todos los elementos de la lista,
+	a la que le añadimos un numero leido desde un puerto externo*/
+	public int sumaListaConValor(Collection<Integer> numeros,Supplier<Integer> data) {
+		int suma=0;
+		for(Integer n: numeros) {
+			suma+=n;
+		}
+		return suma+data.get();
+	}
+	/*Método que recibe una lista de cadenas de caracteres y devuelve el total de las vocales de 
+	 aquellas que comiencen por "a" método que recibe un alista de cadena de caracteres y 
+	 devuelve el total de caracteres de aquellas que tengan más de 5 letras*/
+	//COLLECTION por que vamos a recibir una objeto lista 
+	//FUNCTION para sumar el total de vocales
+	//PREDICATE para que solo se sumen con las que cumplen las condiciones
+	public int listatString(Collection<String> texto,Function<String,Integer> vO,Predicate<String> cond) {
+		int total=0;
+		for(String cad:texto) {//Lista recibida con Collection
+			if(cond.test(cad)) {//Metodo abstracto de Predicate
+				total+=vO.apply(cad); //Metodo abstracto de Function
+			}
+		}
+		return total;
+	}
+}
