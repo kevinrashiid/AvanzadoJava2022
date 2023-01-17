@@ -1,6 +1,7 @@
 package service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import model.PedidosAV_Model;
 
@@ -26,6 +27,23 @@ public class PedidosAV_Service {
 	lo hacemos con ArrayList<>()*/
 	ArrayList<PedidosAV_Model> pd= new ArrayList<PedidosAV_Model>();
 	
+	public void añadirProducto(PedidosAV_Model producto) {//void si no devuelve nada
+		pd.add(producto);
+		pd.forEach();
+	}
+	public void subirPrecio(int porcentaje) {//void si no devuelve nada
+		
+	}
+	public void ordenarProductos() {
+		
+		
+	}
+	public void eliminarProducto(String categoria) {//void si no devuelve nada
+		
+	}
+	public List<PedidosAV_Model> mostrarNombres() {
+		
+	}
 	
 }
 
