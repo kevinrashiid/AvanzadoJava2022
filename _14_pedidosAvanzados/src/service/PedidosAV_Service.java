@@ -27,21 +27,21 @@ public class PedidosAV_Service {
 	lo hacemos con ArrayList<>()*/
 	ArrayList<PedidosAV_Model> pd= new ArrayList<PedidosAV_Model>();
 	
-	  public void altaProducto(PedidosAV_Model producto) {
-	    	
-	    }
-	    		
-	    	public void subirPrecio(int pocentaje) {
-	    		
-	    	}
-	    	public void ordenar() {
-	    		
-	    	}
-	   public void eliminarProductosProductosPorCategoria() {
-		   
-	   }
-	   public List<PedidosAV_Model> productosAlmacenados(){
-		   
-	   }
+	public void altaProducto(PedidosAV_Model producto) {
+
+	}
+
+	public void subirPrecio(int pocentaje) {
+
+	}
+	public void ordenar() {
+
+	}
+	public void eliminarProductosProductosPorCategoria() {
+
+	}
+	public List<PedidosAV_Model> productosAlmacenados(){
+
+	}
 }
 
