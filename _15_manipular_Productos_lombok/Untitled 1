@@ -1,0 +1,7 @@
+como utilizar maven
+click derecho sobre el proyecto 
+configure-> convert proyect maven
+en </dependency> </dependency> copiamos la libreria 
+que queremos usar buscando en https://mvnrepository.com/
+
+lombok sirve para que generar automaticamente los atributos

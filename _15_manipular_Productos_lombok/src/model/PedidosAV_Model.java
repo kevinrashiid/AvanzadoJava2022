@@ -1,7 +1,14 @@
 package model;
 
-import java.sql.Date;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Setter 
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class PedidosAV_Model {
 	/*1.-Añadir producto
 	2.-Subir precio
@@ -24,30 +31,5 @@ public class PedidosAV_Model {
 	private String nombre;
 	private double precio;
 	private String categoria;
-	//constructor
-	public PedidosAV_Model(String nombre, double precio, String categoria) {
-		super();
-		this.nombre = nombre;
-		this.precio = precio;
-		this.categoria = categoria;
-	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	 public double getPrecio() {
-		return precio;
-	}
-	public void setPrecio(double precio) {
-		this.precio = precio;
-	}
-	public String getCategoria() {
-		return categoria;
-	}
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
-	}
+	
 }
-
