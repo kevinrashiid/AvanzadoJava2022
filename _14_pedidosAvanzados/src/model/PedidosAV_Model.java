@@ -1,7 +1,5 @@
 package model;
 
-import java.sql.Date;
-
 public class PedidosAV_Model {
 	/*1.-Añadir producto
 	2.-Subir precio
