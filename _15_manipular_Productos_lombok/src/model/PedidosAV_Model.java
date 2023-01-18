@@ -10,7 +10,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PedidosAV_Model {
-	/*1.-Añadir producto
+	/*ENUNCIADO
+	 1.-Añadir producto
 	2.-Subir precio
 	3.-Ordenar productos
 	4.-Eliminar productos
