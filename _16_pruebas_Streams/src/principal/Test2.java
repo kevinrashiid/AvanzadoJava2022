@@ -1,6 +1,11 @@
 package principal;
 
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Test2 {
 
@@ -23,5 +28,24 @@ public class Test2 {
 	System.out.println("Son todos pares?? \n" 
 	+nums.stream()
 	.allMatch(n->n%2==0));	
+	
+	/* Creacion de un Stream a partir de un Array
+	String[]cads= {"av","vf","ñl"};
+	Stream<String> st=Arrays.stream(cads);*/
+	
+	/* Creacion a partir Stream a partir 
+	 de una serie discreta de datos
+	 Stream<Double> st=Stream.of(1.9,3.5);
+	 */
+	
+	//Este metodo te hace un Stream del 1 al 9
+	IntStream stint=IntStream.range(1, 10);
+	
+	//Este metodo te hace un Stream del 1 al 10
+	IntStream stint2=IntStream.rangeClosed(1, 10);
+	
+	
+	
+	
 	}
 }
