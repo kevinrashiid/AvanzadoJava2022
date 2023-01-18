@@ -2,6 +2,7 @@ package service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 //github.com/kevinrashiid/AvanzadoJava2022.git
 
@@ -22,9 +23,9 @@ public class PedidosAV_Service {
 	opcion1: Se piden los datos del producto y se añade
 	opcion2: se pide un porcentaje, y se sube en ese porcentaje el precio
 	de todos los productos
-	opcion3: se ordenan los productos por precio, de menor a mayor
-	opcion4: se pide una categoría y se eliminan los productos de dicha categoría
-	opcion5: se muestran los datos de todos los productos almacenados
+	opcion3: Se ordenan los productos por precio, de menor a mayor
+	opcion4: Se pide una categoría y se eliminan los productos de dicha categoría
+	opcion5: Se muestran los datos de todos los productos almacenados
 	
 	lo hacemos con ArrayList<>()*/
 	ArrayList<PedidosAV_Model> pd= new ArrayList<PedidosAV_Model>();
@@ -32,20 +33,34 @@ public class PedidosAV_Service {
 	public void guardarProducto(PedidosAV_Model producto) {
 		pd.add(producto);
 	}
-
-	public void subirPrecio(double porcentaje) {
-		pd.sort();
+	//sube el precio a todos los productos 
+	public void subirPrecio(double porcentaje) {//con UnaryOperator por que son el mismo 
+											    //tipo el dato de entrada y de salida
+		pd.replaceAll(p->{
+			p.setPrecio(p.getPrecio()+(p.getPrecio()*porcentaje/100));
+			return p;
+		});
 	}
-	public void ordenar() {
-
+	
+	//sube el precio a los productos que cumplen una condición
+	public void subirPrecioConCondicion(int porcentaje, Predicate<PedidosAV_Model> cond) {
+		pd.replaceAll(p->{
+			if(cond.test(p)) {
+				p.setPrecio(p.getPrecio()+(p.getPrecio()*porcentaje/100));
+			}
+			return p;
+		});
 	}
-	public void eliminarProductosProductosPorCategoria() {
-			pd.removeIf(t->t.getCategoria());
+	public void ordenar() {//metodo para ordenar los productos por precio, de menor a mayor
+		pd.sort((a,b)->Double.compare(a.getPrecio(), b.getPrecio()));
+		//metodo compare recibe dos parametros y vevuelve un (int)
+	}
+	public void eliminarProductosProductosPorCategoria(String categoria) {
+			//metodo que hace Se pide una categoría y se eliminan los productos de dicha categoría
+			pd.removeIf(t->t.getCategoria().equalsIgnoreCase(categoria));
 	}
 	public List<PedidosAV_Model> productosAlmacenados(){
-		
-		
-		
+		 //Se muestran los datos de todos los productos almacenados
+		return pd;	
 	}
 }
-

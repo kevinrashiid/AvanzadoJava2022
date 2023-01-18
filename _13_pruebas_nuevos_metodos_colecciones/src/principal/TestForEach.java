@@ -17,5 +17,4 @@ public class TestForEach {
 		//este metodo es muy util
 
 	}
-
 }
