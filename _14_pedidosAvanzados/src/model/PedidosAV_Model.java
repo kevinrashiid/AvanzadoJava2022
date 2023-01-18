@@ -20,10 +20,10 @@ public class PedidosAV_Model {
 	lo hacemos con ArrayList<>()*/
 	
 	private String nombre;
-	private int precio;
+	private double precio;
 	private String categoria;
 	//constructor
-	public PedidosAV_Model(String nombre, int precio, String categoria) {
+	public PedidosAV_Model(String nombre, double precio, String categoria) {
 		super();
 		this.nombre = nombre;
 		this.precio = precio;
@@ -35,10 +35,10 @@ public class PedidosAV_Model {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public int getPrecio() {
+	 public double getPrecio() {
 		return precio;
 	}
-	public void setPrecio(int precio) {
+	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
 	public String getCategoria() {
