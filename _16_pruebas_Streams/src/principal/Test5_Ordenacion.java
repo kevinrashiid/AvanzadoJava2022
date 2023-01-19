@@ -7,7 +7,6 @@ public class Test5_Ordenacion {
 	public static void main(String[] args) {
 		
 		List<Integer> nums=List.of(6,11,-4,6,-7,327,-9,11,41,19);
-		
 		//Mostrar el numero negativo mas pequeño
 		nums.stream()
 		.filter(a->a<0)//filtra mediante la condicion

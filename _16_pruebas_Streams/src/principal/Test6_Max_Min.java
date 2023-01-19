@@ -5,6 +5,7 @@ import java.util.List;
 public class Test6_Max_Min {
 
 	public static void main(String[] args) {
+		
 		List<Integer> nums=List.of(6,11,-4,6,-7,327,-9,11,41,19);
 		//mostrar el numero positivo mas pequeño
 		nums.stream()

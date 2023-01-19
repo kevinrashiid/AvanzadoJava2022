@@ -8,7 +8,6 @@ public class Test1 {
 		
 		//lista de numeros
 		List<Integer> nums=List.of(6,11,-4,6,-7,327,-9,11,41,19);
-		
 		//metodo .stream().count para saber el tamaño de la lista
 		System.out.println(nums.stream().count());
 		

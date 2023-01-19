@@ -7,7 +7,6 @@ public class Test4_Optional_Find_First {
 	public static void main(String[] args) {
 		
 		List<String> nombres=List.of("leche","atún","vino","patatas","leche","agua","vino","lechuga");
-		
 		/*¿Mostrar el nombre del primer producto que comience por A, 
 		 *si no hubiera ninguno que muestre "no hay ninguno"*/
 		System.out.println(nombres.stream()//un stream de objetos <String>
