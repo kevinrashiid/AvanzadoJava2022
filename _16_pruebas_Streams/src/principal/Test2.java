@@ -43,9 +43,5 @@ public class Test2 {
 	
 	//Este metodo te hace un Stream del 1 al 10
 	IntStream stint2=IntStream.rangeClosed(1, 10);
-	
-	
-	
-	
 	}
 }
