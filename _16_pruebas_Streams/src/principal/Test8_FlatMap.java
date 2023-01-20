@@ -11,6 +11,8 @@ public class Test8_FlatMap {
 				new double[]{2.4,5,1,9,6.7},
 				new double[]{5.6,3.2,8,10},
 				new double[]{9.1,4});
-//hacerlo con flatMap
+			//hacerlo con flatMap
+		
+		
 	}
 }

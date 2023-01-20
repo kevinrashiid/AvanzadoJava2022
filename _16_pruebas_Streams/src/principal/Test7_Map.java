@@ -22,7 +22,7 @@ public class Test7_Map {
 		.count());	
 		//muestra 2
 		//.map te devuelve un Stream de lo que le pasemos en este caso
-		// cada palabra en transformada en en tamaño 
+		//cada palabra en transformada en en tamaño 
 		//por ejemplo leche lo transforma a 4
 		
 		//suma del total de caracteres de todas las cadenas no repetidas
