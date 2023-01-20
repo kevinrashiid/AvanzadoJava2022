@@ -1,5 +1,6 @@
 package principal;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Test8_FlatMap {
@@ -12,7 +13,9 @@ public class Test8_FlatMap {
 				new double[]{5.6,3.2,8,10},
 				new double[]{9.1,4});
 			//hacerlo con flatMap
-		
-		
+		 System.out.println("La media es: "+notas.stream()
+		 .flatMapToDouble(s->Arrays.stream(s))
+		 .average()
+		 .orElse(0.0));
 	}
 }
