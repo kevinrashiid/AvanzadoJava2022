@@ -13,9 +13,9 @@ public class Test8_FlatMap {
 				new double[]{5.6,3.2,8,10},
 				new double[]{9.1,4});
 			//hacerlo con flatMap
-		 System.out.println("La media es: "+notas.stream()
-		 .flatMapToDouble(s->Arrays.stream(s))
-		 .average()
-		 .orElse(0.0));
+		 System.out.printf("La media es: "+notas.stream()
+		 .flatMapToDouble(s->Arrays.stream(s)) //aplnamos 
+		 .average()//sacamos media del array que nos pasa 
+		 .orElse(0.0));//por si da 0 y para que no nos aparesca Optional
 	}
 }
