@@ -94,9 +94,15 @@ public class CityService {
 				//para que sea manipulable, pero no se limita solo a eso
 	}
 	//metodo que devuelva total las ciudades agrupadas por pais
-	public Map<String,List<String>> agrupadasPorPais(){
+	public Map<String,List<CityModel>> agrupadasPorPais(){
 		return city.stream()
-				.collect(Collectors.groupingBy(s->s.getPais()));
-		
+				.collect(Collectors.groupingBy(s->s.getPais()));	
+	}
+	//metodo que devuelva el total(Es un numero) de habitantes de un determidado pais
+	public Integer totalDeHabitantes(String pais){
+		return city.stream()
+				.filter(n->n.getPais().equalsIgnoreCase(pais))
+				.collect(Collectors.summingInt(n->n.getHabitantes()));
+		//filtramos por pais que solo sumemos los habitantes del pais que nos pase
 	}
 }
