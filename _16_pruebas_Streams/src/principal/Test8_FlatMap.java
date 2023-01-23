@@ -17,5 +17,6 @@ public class Test8_FlatMap {
 		 .flatMapToDouble(s->Arrays.stream(s)) //aplnamos 
 		 .average()//sacamos media del array que nos pasa 
 		 .orElse(0.0));//por si da 0 y para que no nos aparesca Optional
-	}
+		 //.flatMapToDouble por que tenemos arrays de dobles
+	}	
 }
