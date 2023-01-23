@@ -6,6 +6,7 @@ import java.util.List;
 public class Test8_FlatMap {
 
 	public static void main(String[] args) {
+		
 		//dadas las notas de un centro de formacion,donde cada Array
 		//contiene las notas de un aula, calcular la media global
 		List<double[]> notas=List.of(new double[]{3.5,7,8.9},

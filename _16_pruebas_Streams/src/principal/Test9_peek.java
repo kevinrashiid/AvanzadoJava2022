@@ -13,7 +13,7 @@ public class Test9_peek {
 		.filter(s->s>0)
 		.peek(p->System.out.println(p))
 		.count());
-		//peek() es como un forEach pero este es intermedio el forEach es final
+		//peek() es como un forEach() pero este es intermedio el forEach es final
 		//despues de un .stream tiene que haber metodo intermedio y para cerrar final
 		//si no hay un final y quitamos en este ejemplo el .count() no mostraria nada
 		//pero no hace falta que para tener un metodo final tengamos intermedios
