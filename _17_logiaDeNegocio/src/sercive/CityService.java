@@ -1,7 +1,10 @@
 package sercive;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.OptionalDouble;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import model.CityModel;
 
@@ -82,5 +85,12 @@ public class CityService {
 				.mapToDouble(t->t.getTemperaturaMedia())
 				.average();//OptionalDouble
 	}
+	//devuelve la lista de ciudades que pertenecen a un determinado pais
+	public List<CityModel> ciudadPorPais(String nombreCity) {
+		return city.stream()//convertimos a int por que para poder utilizar count
+				.filter(c->c.getPais().equalsIgnoreCase(nombreCity))//Stream<Pais>
+				.collect(Collectors.toList());//metodo final
+				//utilizamos collect cuando queramos devolver un list-un Hasset etc
+				//para que sea manipulable, pero no se limita solo a eso
+	}
 }
-
