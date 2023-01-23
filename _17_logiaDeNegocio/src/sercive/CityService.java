@@ -2,8 +2,8 @@ package sercive;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.OptionalDouble;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import model.CityModel;
@@ -92,5 +92,11 @@ public class CityService {
 				.collect(Collectors.toList());//metodo final
 				//utilizamos collect cuando queramos devolver un list-un Hasset etc
 				//para que sea manipulable, pero no se limita solo a eso
+	}
+	//metodo que devuelva total las ciudades agrupadas por pais
+	public Map<String,List<String>> agrupadasPorPais(){
+		return city.stream()
+				.collect(Collectors.groupingBy(s->s.getPais()));
+		
 	}
 }
