@@ -15,6 +15,7 @@ public class CityModel {
 	private int habitantes;
 	private double temperaturaMedia;
 	/*Ejercicio.
+	 
 
 Desarrollar la lógica de negocio de una aplicación para la gestión de ciudades.
 
