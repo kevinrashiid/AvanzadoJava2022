@@ -39,24 +39,33 @@ public class FormacionService {
 	
 	//edad media del curso de una determinada denominacion
 	public double mediaCurso(String denominacion) {
-		
+		return cursos.stream()
+				.filter(c->c.denominacion().equalsIgnoreCase(denominacion))//Stream<Curso>
+				.flatMap(c->c.matriculas().stream())//stream<Alumno>
+				.collect(Collectors.averagingDouble(a->a.edad()));//media de la edad de los cursos
 	}
 	
 	//lista de nombres de alumnos
 	public List<String> nombresAlumnos(){
-		
+		return cursos.stream()//Stream<Curso>
+				.flatMap(c->c.matriculas().stream())//Stream<Alumno>
+				.map(a->a.nombre())//Stream<String>
+				.toList();//convertimos a lista lo que extraemos 
+
 	}
 	
 	//nota media de todos los cursos
 	public double notaMediaDe() {
-		
+		return cursos.stream()
+				.flatMap(c->c..stream())
+				.collect(Collectors.averagingDouble(a->a.nota()));
 	}
 	//lista de alumnos aprobados
 	public List<Alumno> aprobados(){
-		
+		return cursos.stream()
+				.flatMap(c->c.matriculas().stream())
+				.filter(n->n.nota()>=5)
+				.collect(Collectors.toList());//convertimos a una lista con toList()
+				//.toList();//igual que el anterior, pero desde java 13
 	}
-}ç
-
-
-
-
+}
