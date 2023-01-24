@@ -31,10 +31,9 @@ public class FormacionService {
 	}
 	//lista de cursos con numeros de alumnos inferior a un determinado valor
 	public List<Curso> cursosInferiorAlumno(int numAlumno){
-		
-		
-		
-		
+		return cursos.stream()
+				.filter(c->c.matriculas().size()<numAlumno)//Stream<Curso>
+				.toList();
 	}
 	
 	//edad media del curso de una determinada denominacion
@@ -51,13 +50,12 @@ public class FormacionService {
 				.flatMap(c->c.matriculas().stream())//Stream<Alumno>
 				.map(a->a.nombre())//Stream<String>
 				.toList();//convertimos a lista lo que extraemos 
-
 	}
 	
 	//nota media de todos los cursos
 	public double notaMediaDe() {
 		return cursos.stream()
-				.flatMap(c->c..stream())
+				.flatMap(c->c.matriculas().stream())
 				.collect(Collectors.averagingDouble(a->a.nota()));
 	}
 	//lista de alumnos aprobados
