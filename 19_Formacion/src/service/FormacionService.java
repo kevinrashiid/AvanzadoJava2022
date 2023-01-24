@@ -33,6 +33,8 @@ public class FormacionService {
 	public List<Curso> cursosInferiorAlumno(int numAlumno){
 		
 		
+		
+		
 	}
 	
 	//edad media del curso de una determinada denominacion
