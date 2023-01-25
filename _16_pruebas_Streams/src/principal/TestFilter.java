@@ -30,6 +30,6 @@ public class TestFilter {
 				.distinct()
 				.filter(n->n.length()<6)
 				.count()
-				);
+				);  
 	}
 }
