@@ -23,7 +23,7 @@ public class FormacionService {
 												new Alumno("alumno7",33,4)
 												))
 										);
-	//METODOS
+	//METODOS que manipulan lista que dentro tienen listas
 	//duracion media de todos los cursos
 	public double duracionDeCursos() {
 		return cursos.stream()
@@ -65,5 +65,32 @@ public class FormacionService {
 				.filter(n->n.nota()>=5)
 				.collect(Collectors.toList());//convertimos a una lista con toList()
 				//.toList();//igual que el anterior, pero desde java 13
+	}	
+	//lista de nombres de cursos
+	public List<String> listaCursos(){
+		return cursos.stream()//String<Curso>
+				.map(c->c.denominacion())
+				.toList();
+				
+	}
+	//nota media del curso de una determinada denominacion
+	public double notaPorCurso(String deno) {
+		return cursos.stream()
+				.filter(c->c.denominacion().equalsIgnoreCase(deno))
+				.flatMap(c->c.matriculas().stream())
+				.collect(Collectors.averagingDouble(a->a.nota()));
+	}
+	//lista de alumnos de un curso de una determinada denominacion
+	public List<Alumno> listaAlumnos(String alum){
+		//OPCION 1
+		/*return cursos.stream()
+				.filter(c->c.denominacion().equalsIgnoreCase(alum))
+				.flatMap(c->c.matriculas().stream())
+				.toList();*/
+		return cursos.stream() 
+				.filter(c->c.denominacion().equals(alum))//Stream<Curso>
+				.findFirst()  //Optional<Curso>
+				.get()  //Curso
+				.matriculas();
 	}
 }
