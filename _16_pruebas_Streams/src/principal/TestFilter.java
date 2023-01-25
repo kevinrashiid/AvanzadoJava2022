@@ -31,8 +31,5 @@ public class TestFilter {
 				.filter(n->n.length()<6)
 				.count()
 				);
-	
-		
-		
 	}
 }
