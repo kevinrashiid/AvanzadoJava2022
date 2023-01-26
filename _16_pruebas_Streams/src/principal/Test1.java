@@ -19,7 +19,8 @@ public class Test1 {
 		//solo aparece uno de los duplicados
 		nums.stream()
 		.distinct() //este es el metodo
-		.forEach(n->System.out.println(n));
+		/*.forEach(n->System.out.println(n));*/
+		.forEach(System.out::print);
 		
 		//metodo limit() extrae los n primeros elementos del mismo
 		
