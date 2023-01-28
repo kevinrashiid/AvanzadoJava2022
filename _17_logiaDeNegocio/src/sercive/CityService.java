@@ -32,6 +32,9 @@ public class CityService {
 	
 	//hacer un JUnit para probar este Proyecto
 	ArrayList<CityModel> city=new ArrayList<>();
+	
+	/*Añadir ciudad: recibe los datos de una ciudad y la guarda en una lista, teniendo en cuenta
+	que no se permiten ciudades repetidas (nombre y país iguales)*/
 	public boolean añadirCiudad(CityModel ct) {
 		if(
 				city.stream()
@@ -42,27 +45,37 @@ public class CityService {
 			}
 			return false;
 	}
+	/*1.-Número de ciudades en un país: recibe el nombre del pais y devuelve el total de ciudades
+	registradas de ese pais. Si no hay ciudades en ese país, devolverá 0*/
 	public int nCiudadesPorPais(String nombreCity) {
 		return (int)city.stream()//convertimos a int por que para poder utilizar count
 				.filter(c->c.getPais().equalsIgnoreCase(nombreCity))//Stream<Pais>
 				.count();	
 	}
+	
+	//3.-Ciudad más poblada: Devuelve los datos de la ciudad más poblada
 	public CityModel ciudadMasPoblada() {
 		return city.stream()
 				.max((c1,c2)->c1.getHabitantes()-c2.getHabitantes())//Optional<Ciudad>
 				.orElse(null);
 	}
+	
+	/*4.-Buscar ciudad: recibe el nombre de ciudad y país, y devuelve los datos de la misma
+	Si no existe, devolverá null*/
 	public CityModel buscarCiudad(String nombreCity, String pais) {
 		return city.stream()
 				.filter(c->c.getNombreCity().equalsIgnoreCase(nombreCity)&&c.getPais().equalsIgnoreCase(pais))
 				.findFirst()//optional<CityModel>
 				.orElse(null);	
 	}
+	
+	/*5.-Ciudad más fria: Devuelve los datos de la ciudad más fria*/
 	public CityModel ciudadMasFria() {
 		return city.stream()
 				.min((c1,c2)->Double.compare(c1.getTemperaturaMedia(),c2.getTemperaturaMedia()))
 				.orElse(null);	
 	}
+	
 	//metodo que devuelva el total de paises registrados
 	public int totalDePaises() {
 		return (int)city.stream()//Stream<CityModel>
@@ -71,6 +84,7 @@ public class CityService {
 				.distinct()//Stream<String> quitamos los duplicados
 				.count(); //muestra el tamaño de la lista
 	}
+	
 	//temperatu media de las ciudades cuyo pais se recibe como para parametro
 	public double temperaturaMedia(String pais) {
 		return city.stream()
@@ -79,12 +93,14 @@ public class CityService {
 				.average()//OptionalDouble
 				.orElse(0);//0 si no hubiera ninguna ciudad		
 	}
+	
 	public OptionalDouble temperaturaMedia2(String pais) {
 		return city.stream()
 				.filter(c->c.getPais().equalsIgnoreCase(pais))
 				.mapToDouble(t->t.getTemperaturaMedia())
 				.average();//OptionalDouble
 	}
+	
 	//devuelve la lista de ciudades que pertenecen a un determinado pais
 	public List<CityModel> ciudadPorPais(String nombreCity) {
 		return city.stream()//convertimos a int por que para poder utilizar count
@@ -93,11 +109,13 @@ public class CityService {
 				//utilizamos collect cuando queramos devolver un list-un Hasset etc
 				//para que sea manipulable, pero no se limita solo a eso
 	}
+	
 	//metodo que devuelva total las ciudades agrupadas por pais
 	public Map<String,List<CityModel>> agrupadasPorPais(){
 		return city.stream()
 				.collect(Collectors.groupingBy(s->s.getPais()));	
 	}
+	
 	//metodo que devuelva el total(Es un numero) de habitantes de un determidado pais
 	public Integer totalDeHabitantes(String pais){
 		return city.stream()
