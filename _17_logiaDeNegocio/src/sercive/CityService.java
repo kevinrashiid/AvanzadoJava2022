@@ -76,7 +76,7 @@ public class CityService {
 				.orElse(null);	
 	}
 	
-	//metodo que devuelva el total de paises registrados
+	//6.-metodo que devuelva el total de paises registrados
 	public int totalDePaises() {
 		return (int)city.stream()//Stream<CityModel>
 				.map(c->c.getPais())//Stream<String> nos dan el Stream con todo pero aqui nos quedamos con .getPais 
@@ -85,7 +85,7 @@ public class CityService {
 				.count(); //muestra el tamaño de la lista
 	}
 	
-	//temperatu media de las ciudades cuyo pais se recibe como para parametro
+	//7.-temperatu media de las ciudades cuyo pais se recibe como para parametro
 	public double temperaturaMedia(String pais) {
 		return city.stream()
 				.filter(c->c.getPais().equalsIgnoreCase(pais))
@@ -94,6 +94,7 @@ public class CityService {
 				.orElse(0);//0 si no hubiera ninguna ciudad		
 	}
 	
+	//7.1.-temperatu media de las ciudades cuyo pais se recibe como para parametro
 	public OptionalDouble temperaturaMedia2(String pais) {
 		return city.stream()
 				.filter(c->c.getPais().equalsIgnoreCase(pais))
@@ -101,7 +102,7 @@ public class CityService {
 				.average();//OptionalDouble
 	}
 	
-	//devuelve la lista de ciudades que pertenecen a un determinado pais
+	//8-devuelve la lista de ciudades que pertenecen a un determinado pais
 	public List<CityModel> ciudadPorPais(String nombreCity) {
 		return city.stream()//convertimos a int por que para poder utilizar count
 				.filter(c->c.getPais().equalsIgnoreCase(nombreCity))//Stream<Pais>
@@ -110,13 +111,13 @@ public class CityService {
 				//para que sea manipulable, pero no se limita solo a eso
 	}
 	
-	//metodo que devuelva total las ciudades agrupadas por pais
+	//9.-metodo que devuelva total las ciudades agrupadas por pais
 	public Map<String,List<CityModel>> agrupadasPorPais(){
 		return city.stream()
 				.collect(Collectors.groupingBy(s->s.getPais()));	
 	}
 	
-	//metodo que devuelva el total(Es un numero) de habitantes de un determidado pais
+	//10.-metodo que devuelva el total(Es un numero) de habitantes de un determidado pais
 	public Integer totalDeHabitantes(String pais){
 		return city.stream()
 				.filter(n->n.getPais().equalsIgnoreCase(pais))
