@@ -29,6 +29,7 @@ public class FormacionService {
 		return cursos.stream()
 				.collect(Collectors.averagingDouble(c->c.duracion()));
 	}
+	
 	//lista de cursos con numeros de alumnos inferior a un determinado valor
 	public List<Curso> cursosInferiorAlumno(int numAlumno){
 		return cursos.stream()
@@ -58,6 +59,7 @@ public class FormacionService {
 				.flatMap(c->c.matriculas().stream())
 				.collect(Collectors.averagingDouble(a->a.nota()));
 	}
+	
 	//lista de alumnos aprobados
 	public List<Alumno> aprobados(){
 		return cursos.stream()
@@ -66,6 +68,7 @@ public class FormacionService {
 				.collect(Collectors.toList());//convertimos a una lista con toList()
 				//.toList();//igual que el anterior, pero desde java 13
 	}	
+	
 	//lista de nombres de cursos
 	public List<String> listaCursos(){
 		return cursos.stream()//String<Curso>
@@ -73,6 +76,7 @@ public class FormacionService {
 				.toList();
 				
 	}
+	
 	//nota media del curso de una determinada denominacion
 	public double notaPorCurso(String deno) {
 		return cursos.stream()
@@ -80,6 +84,7 @@ public class FormacionService {
 				.flatMap(c->c.matriculas().stream())
 				.collect(Collectors.averagingDouble(a->a.nota()));
 	}
+	
 	//lista de alumnos de un curso de una determinada denominacion
 	public List<Alumno> listaAlumnos(String alum){
 		//OPCION 1
